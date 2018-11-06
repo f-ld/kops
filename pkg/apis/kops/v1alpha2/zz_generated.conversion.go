@@ -2176,9 +2176,11 @@ func autoConvert_v1alpha2_DockerConfig_To_kops_DockerConfig(in *DockerConfig, ou
 	out.DefaultUlimit = in.DefaultUlimit
 	out.ExecRoot = in.ExecRoot
 	out.Experimental = in.Experimental
+	out.FixedCidrV6 = in.FixedCidrV6
 	out.Hosts = in.Hosts
 	out.IPMasq = in.IPMasq
 	out.IPTables = in.IPTables
+	out.IPv6 = in.IPv6
 	out.InsecureRegistry = in.InsecureRegistry
 	out.InsecureRegistries = in.InsecureRegistries
 	out.LiveRestore = in.LiveRestore
@@ -2209,9 +2211,11 @@ func autoConvert_kops_DockerConfig_To_v1alpha2_DockerConfig(in *kops.DockerConfi
 	out.DefaultUlimit = in.DefaultUlimit
 	out.ExecRoot = in.ExecRoot
 	out.Experimental = in.Experimental
+	out.FixedCidrV6 = in.FixedCidrV6
 	out.Hosts = in.Hosts
 	out.IPMasq = in.IPMasq
 	out.IPTables = in.IPTables
+	out.IPv6 = in.IPv6
 	out.InsecureRegistry = in.InsecureRegistry
 	out.InsecureRegistries = in.InsecureRegistries
 	out.LiveRestore = in.LiveRestore
