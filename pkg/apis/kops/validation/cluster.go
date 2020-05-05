@@ -92,9 +92,11 @@ func validateEtcdClusterUpdate(fp *field.Path, obj *kops.EtcdClusterSpec, status
 			fp := fp.Child("Members").Key(k)
 
 			oldMember := oldMembers[k]
-			if oldMember == nil {
-				allErrs = append(allErrs, field.Forbidden(fp, "EtcdCluster members cannot be added"))
-			} else {
+			// See https://github.com/kubernetes/kops/pull/8980/files
+			// if oldMember == nil {
+			// 	allErrs = append(allErrs, field.Forbidden(fp, "EtcdCluster members cannot be added"))
+			// } else {
+			if oldMember != nil {
 				allErrs = append(allErrs, validateEtcdMemberUpdate(fp, newMember, etcdClusterStatus, oldMember)...)
 			}
 		}
